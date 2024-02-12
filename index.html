@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Control Difuso</title>
+  </head>
+  <body>
+    <h1>Control difuso</h1>
+    <h3>Led</h3>
+    <button id="led_on">On</button>
+    <button id="led_off">Off</button>
+
+    <h3>Temperatura</h3>
+    <meter value="2" min="0" max="100" id="temp_meter"></meter>
+    <h3 id="temp_value" style="display: inline-block">2</h3>
+
+    <h3>Humedad Relativa</h3>
+    <meter value="2" min="0" max="100" id="hum_meter"></meter>
+    <h3 id="hum_value" style="display: inline-block">2</h3>
+
+    <h3>Humedad del suelo</h3>
+    <meter value="2" min="0" max="100" id="soil_meter"></meter>
+    <h3 id="soil_value" style="display: inline-block">2</h3>
+
+    <h3>Flujo del agua</h3>
+    <meter value="2" min="0" max="100" id="flujo_meter"></meter>
+    <h3 id="flujo_value" style="display: inline-block">2</h3>
+
+    <h3>Control Difuso</h3>
+    <button id="difuso">Imprime difuso</button>
+    <button id="vel">Control Difuso</button>
+    <button id="velCero">Velocidad Motor 0</button>
+    <button id="velMax">Velocidad Motor 255</button>
+    <a href="./pages/pruebas.html">Pruebas</a>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
