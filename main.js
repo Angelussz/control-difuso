@@ -2,7 +2,7 @@ import { entradaFusificar } from "./reglasDifusas";
 const Esp32IP = "192.168.4.1";
 var connection = new WebSocket("ws://" + Esp32IP + ":81/");
 
-let estado_boton = 0;
+let control_difuso = 0;
 let flujo = 0;
 
 let temperatura = 0;
@@ -10,7 +10,8 @@ let humedad = 0;
 let humedad_suelo = 0;
 let flujo_agua = 0;
 
-
+let lecturaDifusa;
+let apagado=0;
 
 const tempMeter = document.getElementById("temp_meter");
 const tempValue = document.getElementById("temp_value");
@@ -52,27 +53,39 @@ difuso.addEventListener("click",e=>{
   console.log(Math.round(entradaFusificar(humedad,temperatura,humedad_suelo)));
 })
 function button_on() {
-  estado_boton = Math.round(entradaFusificar(humedad,temperatura,humedad_suelo));
-  flujo = 1;
-  console.log("Control Difuso");
-  send_data();
+  lecturaDifusa = setInterval(()=>{
+    control_difuso = Math.round(entradaFusificar(humedad,temperatura,humedad_suelo).voltajeSalida);
+    flujo = 1;
+    apagado +=1;
+    console.log(control_difuso)
+    send_data();
+    
+  },1000)
+  // control_difuso = Math.round(entradaFusificar(humedad,temperatura,humedad_suelo));
+  // flujo = 1;
+
+  // console.log("Control Difuso");
+
+  
 }
 
 function button_off() {
-  estado_boton = 0;
+  control_difuso = 0;
   flujo=0;
+  apagado = 0;
   console.log("Velocidad bomba 0");
   send_data();
 }
 function on_maximo() {
-  estado_boton = 255;
+  control_difuso = 255;
   flujo = 1;
   console.log("Velocidad bomba max");
   send_data();
+  
 }
 
 function send_data() {
-  var led_estado = '{"Motor" :' + estado_boton +","+ '"Flujo" :'+ flujo + "}";
+  var led_estado = '{"Motor" :' + control_difuso +","+ '"Flujo" :'+ flujo + "}";
   connection.send(led_estado);
 }
 
