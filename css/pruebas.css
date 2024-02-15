@@ -1,0 +1,12 @@
+h1{
+    text-align: center;
+}
+label{
+    display: block;
+    margin-bottom: 10px;
+}
+form{
+    border: blue solid 2px;
+    margin: 12px;
+    padding: 12px;
+}

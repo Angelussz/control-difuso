@@ -4,36 +4,62 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/styles.css">
     <title>Control Difuso</title>
   </head>
   <body>
-    <h1>Control difuso</h1>
-    <h3>Led</h3>
-    <button id="led_on">On</button>
-    <button id="led_off">Off</button>
 
-    <h3>Temperatura</h3>
-    <meter value="2" min="0" max="100" id="temp_meter"></meter>
-    <h3 id="temp_value" style="display: inline-block">2</h3>
+    <h1 class="titulo">Control difuso</h1>
+    <div class="variables">
+        <div class="temperatura">
+            <h3>Temperatura</h3>
+            <h3 id="temp_value" style="display: inline-block">0</h3>
+            <div class="barra">
+                <span class="progreso" id="temp_meter"></span>
+            </div>
+            <!-- <meter value="2" min="0" max="100" id="temp_meter"></meter>     -->
+        </div>
+        <div class="humedad-ambiental">
+            <h3>Humedad Relativa</h3>
+            <h3 id="hum_value" style="display: inline-block">0</h3>
+            <div class="barra" >
+                <span class="progreso" id="hum_meter"></span>
+            </div>
+            <!-- <meter value="2" min="0" max="100" id="hum_meter"></meter> -->
+        </div>
+        <div class="huemdad-suelo">
+            <h3>Humedad del suelo</h3>
+            <h3 id="soil_value" style="display: inline-block">0</h3>
+            <div class="barra">
+                <span class="progreso" id="soil_meter"></span>
+            </div>
+            <!-- <meter value="2" min="0" max="100" id="soil_meter"></meter> -->
+        </div>
 
-    <h3>Humedad Relativa</h3>
-    <meter value="2" min="0" max="100" id="hum_meter"></meter>
-    <h3 id="hum_value" style="display: inline-block">2</h3>
-
-    <h3>Humedad del suelo</h3>
-    <meter value="2" min="0" max="100" id="soil_meter"></meter>
-    <h3 id="soil_value" style="display: inline-block">2</h3>
-
-    <h3>Flujo del agua</h3>
-    <meter value="2" min="0" max="100" id="flujo_meter"></meter>
-    <h3 id="flujo_value" style="display: inline-block">2</h3>
+    </div>
+    <div class="fujo-agua">
+        <h3>Flujo del agua</h3>
+        <h3 id="flujo_value" style="display: inline-block">0</h3>
+        <!-- <div class="barra">
+            <span class="progreso"></span>
+        </div> -->
+        
+    </div>
 
     <h3>Control Difuso</h3>
-    <button id="difuso">Imprime difuso</button>
+    <button id="accion">Conexión difusa</button>
+    <button id="desconectar">Desconectar difuso</button>
+    <!-- <button id="difuso">Imprime difuso</button> -->
     <button id="vel">Control Difuso</button>
-    <button id="velCero">Velocidad Motor 0</button>
-    <button id="velMax">Velocidad Motor 255</button>
-    <a href="./pages/pruebas.html">Pruebas</a>
-    <script type="module" src="/main.js"></script>
+    <button id="vel-det">Detener Control difuso</button>
+    <!-- <button id="velCero">Velocidad Motor 0</button> -->
+    <!-- <button id="velMax">Velocidad Motor 255</button> -->
+    <div class="vel-motor">
+        <h3>Velocidad Motor</h3>
+        <h3 id="velocidad-motor" style="display: inline-block">0</h3>
+    </div>
+    <a href="./pages/pruebas.html">Pruebas 1 - Salida PWM</a>
+    <a href="./pages/pruebas2.html">Prueba 2 - Regado por meses</a>
+    <script type="module" src="./js/main.js"></script>
   </body>
 </html>

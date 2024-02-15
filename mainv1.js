@@ -61,12 +61,6 @@ function button_on() {
     send_data();
     
   },1000)
-  // control_difuso = Math.round(entradaFusificar(humedad,temperatura,humedad_suelo));
-  // flujo = 1;
-
-  // console.log("Control Difuso");
-
-  
 }
 
 function button_off() {

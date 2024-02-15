@@ -4,25 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Velocidad Motor</title>
+    <link rel="stylesheet" href="../css/pruebas.css">
 </head>
 <body>
+    <h1>Pruebas de control difuso</h1>
     <form action="" id="formulario">
         <label for="temperatura">
             Temperatura: 
             <input id="temperatura" type="text">
+            <br>
         </label>
         <label for="hume_ambiente">
             Humedad del ambiente
+            
             <input id="hume_ambiente" type="text" >
+            <br>
         </label>
         <label for="hume_suelo">
+            <br>
             Humedad del suelo
             <input id="hume_suelo" type="text">
+            <br>
         </label>
-        <button id="calculo">Calcular</button>
+        <button id="calculo">Control Difuso</button>
     </form>
-    <!-- <script src="./pwm.js" type="module"></script> -->
+    <button id="accion">Conexión difusa</button>
+    <button id="vel-det">Detener Control difuso</button>
+    <div class="vel-motor" style="text-align: center;">
+        <h3>Velocidad Motor</h3>
+        <h3 id="velocidad-motor" style="display: inline-block">0</h3>
+    </div>
+    <a href="../index.html">Principal</a>
+    <script src="../js/pwm.js" type="module"></script>
     <!-- <script src="./pruebas.js" type="module"></script> -->
-    <script src="./retroalimentacion.js"></script>
+    <!-- <script src="./retroalimentacion.js"></script> -->
 </body>
 </html>

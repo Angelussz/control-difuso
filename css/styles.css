@@ -1,0 +1,38 @@
+.titulo{
+    display: flex;
+    justify-content: center;
+}
+.variables{
+    display: flex;
+    justify-content: space-around;
+}
+.variables>div,.fujo-agua,.vel-motor{
+    border: solid blue;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px;
+}
+
+.fujo-agua, .vel-motor{
+
+    width: 30%;
+    margin: 13px auto;
+    
+
+}
+
+.barra{
+    margin: 0 auto;
+    height: 10px;
+    width: 100%;
+    background-color: gray;
+    border-radius: 50px;
+    overflow: hidden;
+}
+.progreso{
+    display: block;
+    width: 50%;
+    height: 100%;
+    border-radius: 50px;
+    background-color: red;
+}
